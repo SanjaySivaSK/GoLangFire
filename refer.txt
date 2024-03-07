@@ -1,0 +1,85 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+	type circle struct {
+		radius float64
+	}
+
+	func (c circle) area()float64 {
+		area := math.Pi*c.radius * c.radius
+		return area
+	}
+
+	func main() {
+
+		c := []circle{{2.4},{4.4}}
+		for _, v := range c {
+			fmt.Println(v.area())
+			
+		}
+
+		
+
+	}
+
+
+
+
+
+var ss=make([]int,2,4)
+
+var m=map[int][]string{
+	2:{"ss","asas"},
+	1:{"q","q"},
+	0:{"q","q"},
+	5:{"q","q"},
+}
+
+
+	// arr := [...]int{1, 1}
+	// fmt.Printf("%T\n",arr)
+	
+
+	
+
+	// for i,v:=range m
+
+    
+		// fmt.Println(i,"\t",v)
+		// 
+		// arr := [...]int{4,2,1,5}
+		// fmt.Println(arr)
+
+
+
+
+
+
+
+
+
+
+
+        package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    if len(os.Args) < 2{
+		fmt.Println(len(os.Args))
+        fmt.Println("Please provide a command-line argument.")
+        return
+    }
+
+    argument := os.Args[10]
+    fmt.Println("You provided the argument:", argument)
+	
+}
+        
