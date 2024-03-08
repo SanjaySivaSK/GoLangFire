@@ -3,9 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	// "io/ioutil"
 	"math/rand"
-	// "os"
+	"os"
 )
 
 type detail struct {
@@ -34,6 +34,10 @@ func main() {
 	lists.addTodo(name, age)
 
 	saveListsToFile(lists)
+	fmt.Println("Your list-------------")
+	getList(lists)
+
+	
 
 	// fmt.Println(*lists)
 }
@@ -48,7 +52,7 @@ func (l *lists) addTodo(name string, age int) {
 }
 
 func loadListsFromFile() lists {
-	data, err := ioutil.ReadFile(fileName)
+	data, err := os.ReadFile(fileName)
 	if err != nil {
 		return lists{}
 	}
@@ -72,8 +76,21 @@ func saveListsToFile(l lists) {
 		return
 	}
 
-	err = ioutil.WriteFile(fileName, data,0666)
+	err = os.WriteFile(fileName, data,0666)
 	if err != nil {
-		fmt.Println("Error writing to file:", err)
+		// fmt.Println("Error writing to file:", err)
 	}
+}
+func getList(l lists){
+	for _, mv := range l.Entries {
+		// fmt.Println(mv)
+
+		for k, sv := range mv {
+			fmt.Println(k,sv.First,sv.Age)
+		
+			
+		}
+		
+	}
+
 }
