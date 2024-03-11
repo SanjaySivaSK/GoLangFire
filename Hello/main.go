@@ -2,9 +2,11 @@ package main
 
 import "fmt"
 
-const Pi=3.14
+const Pi = 3.14
 
-func main(){
+var i float64
+
+func main() {
 	// st :="sas"
 
 	// sli:=make([],2,3)
@@ -12,6 +14,12 @@ func main(){
 	// sli = append(sli, 2.4)
 
 	// fmt.Println(int(st))
+
+	// i=4
+	e := 1.00
+	fmt.Printf("%T", e)
+	result := int(4.00)
+	fmt.Printf("%T", result)
 
 }
 

@@ -9,12 +9,12 @@ import (
 )
 
 type detail struct {
-	First string 
-	Age   int   
+	First string
+	Age   int
 }
 
 type lists struct {
-	Entries []map[int]detail 
+	Entries []map[int]detail
 }
 
 var name string
@@ -36,8 +36,6 @@ func main() {
 	saveListsToFile(lists)
 	fmt.Println("Your list-------------")
 	getList(lists)
-
-	
 
 	// fmt.Println(*lists)
 }
@@ -70,27 +68,26 @@ func loadListsFromFile() lists {
 func saveListsToFile(l lists) {
 	fmt.Println(l)
 	data, err := json.MarshalIndent(l, "", "  ")
-	
+
 	if err != nil {
 		fmt.Println("Error marshalling data:", err)
 		return
 	}
 
-	err = os.WriteFile(fileName, data,0666)
+	err = os.WriteFile(fileName, data, 0666)
 	if err != nil {
 		// fmt.Println("Error writing to file:", err)
 	}
 }
-func getList(l lists){
+func getList(l lists) {
 	for _, mv := range l.Entries {
 		// fmt.Println(mv)
 
 		for k, sv := range mv {
-			fmt.Println(k,sv.First,sv.Age)
-		
-			
+			fmt.Println(k, sv.First, sv.Age)
+
 		}
-		
+
 	}
 
 }

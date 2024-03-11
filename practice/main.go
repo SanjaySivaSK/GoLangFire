@@ -17,16 +17,13 @@ type circle struct {
 func main() {
 	c := circle{2}
 	areas(c)
-   
-
 
 }
-
 
 func (c circle) area() {
-	fmt.Println(math.Pi*float64(c.radius)*float64(c.radius))
+	fmt.Println(math.Pi * float64(c.radius) * float64(c.radius))
 }
 
-func areas(s shape){
+func areas(s shape) {
 	s.area()
 }

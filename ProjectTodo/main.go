@@ -13,10 +13,8 @@ type todo struct {
 
 func main() {
 	content := &todo{}
-	
 
 	fmt.Println("Enter the Name")
-
 
 	m := map[int]detail{
 		1: {"sanjay", 22},
